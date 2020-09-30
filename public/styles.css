@@ -1,0 +1,41 @@
+body {
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  background-color: #f1f3f8;
+  color: #393b44;
+}
+
+h1 {
+  color: #393b44;
+  padding-bottom: 20px;
+}
+
+button:focus, button:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-items {
+  color: #393b44;
+  border: 0;
+  background-color: #f1f3f8;
+}
+
+.app-container {
+  margin: 7% 15%;
+}
+
+/* HOME TAB */
+
+.home {
+  margin: 7% 0;
+}
+
+.react-image {
+  width: 500px;
+}
+
+.home-text {
+  text-align: left;
+  padding: 20% 0;
+}
