@@ -10,6 +10,10 @@ h1 {
   padding-bottom: 20px;
 }
 
+h2 {
+  font-size: 0.5rem;
+}
+
 button:focus, button:active {
   outline: none;
   box-shadow: none;
@@ -38,4 +42,17 @@ button:focus, button:active {
 .home-text {
   text-align: left;
   padding: 20% 0;
+}
+
+/* CALCULATOR TAB */
+
+.calc-input {
+  width: 25%;
+  text-align: center;
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.calc-btn {
+  margin: 20px 0;
 }

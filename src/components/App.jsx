@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import Nav from "./Nav";
 import Home from "./Home";
+import Calculator from "./Calculator";
 
 function App() {
 
@@ -13,8 +14,9 @@ function App() {
   return (
   <div className="app-container">
     <h1>React Dev Playground</h1>
-    <Nav onClick={nav} />
-    {navClick == "Home" && <Home />}
+    <Nav navSelect={nav} />
+    {navClick === "Home" && <Home />}
+    {navClick === "Calculator" && <Calculator navSelect={nav} />}
   </div>
 )}
 
