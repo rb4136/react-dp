@@ -1,12 +1,14 @@
+/* Color Palatte: https://colorhunt.co/palette/134510 */
+
 body {
   font-family: 'Quicksand', sans-serif;
   text-align: center;
-  background-color: #f1f3f8;
-  color: #393b44;
+  background-color: #ebf0f6;
+  color: #132238;
 }
 
 h1 {
-  color: #393b44;
+  color: #364e68;
   padding-bottom: 20px;
 }
 
@@ -20,9 +22,9 @@ button:focus, button:active {
 }
 
 .navbar-items {
-  color: #393b44;
+  color: #132238;
   border: 0;
-  background-color: #f1f3f8;
+  background-color: #ebf0f6;
 }
 
 .app-container {
@@ -55,4 +57,13 @@ button:focus, button:active {
 
 .calc-btn {
   margin: 20px 0;
+}
+
+.add {
+  background-color: #C8D7DE;
+  height: 250px;
+}
+
+.calc-sec {
+  padding: 20px 0;
 }
