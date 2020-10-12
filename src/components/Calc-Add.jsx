@@ -3,9 +3,10 @@ import React from "react";
 
 
 function Add(props) {
+  const addOne = parseInt(props.numberOne);
+  const addTwo = parseInt(props.numberTwo);
 
-
-  const sum = parseInt(props.numberOne) + parseInt(props.numberTwo);
+  const sum = addOne + addTwo;
 
   return (
     <div>

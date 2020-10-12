@@ -5,56 +5,58 @@ import Sub from "./Calc-Sub";
 import Mult from "./Calc-Mult";
 import Div from "./Calc-Div";
 
-function Calculator(props) {
-  const [numberOne, changeNumberOne] = useState(0);
-  const [numberTwo, changeNumberTwo] = useState(0);
+function Calculator() {
+  const [numberOne, changeNumberOne] = useState("");
+  const [numberTwo, changeNumberTwo] = useState("");
+  const [finalNumOne, setFinalNumOne] = useState("");
+  const [finalNumTwo, setFinalNumTwo] = useState("");
   const [calcClick, setCalcClick] = useState(false);
 
   function updateNum1(event) {
-    const num1 = event.target.value;
-    if (num1 === "") {
-      changeNumberOne(0);
-    } else {
-      changeNumberOne(num1);
-    }
+    changeNumberOne(event.target.value);
   };
 
   function updateNum2(event) {
-    const num2 = event.target.value;
-    if (num2 === "") {
-      changeNumberTwo(0);
-    } else {
-      changeNumberTwo(num2);
-    }
+    changeNumberTwo(event.target.value);
   };
 
-  function handleSubmit() {
+  function handleSubmit(event) {
     setCalcClick(true);
-
+    event.preventDefault();
+    setFinalNumOne(numberOne);
+    setFinalNumTwo(numberTwo);
+    changeNumberOne("");
+    changeNumberTwo("");
   }
 
   return (
     <div className="home">
       <div>
         <p>Please enter two whole integers into the boxes below.</p>
-        <CalcForm updateNum1={updateNum1} updateNum2={updateNum2} setCalcClick={setCalcClick} handleSubmit={handleSubmit} />
+        <CalcForm
+          updateNum1={updateNum1}
+          updateNum2={updateNum2}
+          handleSubmit={handleSubmit}
+          numberOne={numberOne}
+          numberTwo={numberTwo}
+        />
         <div className="container-fluid">
           <div className="row">
             <div className="col-3 add calc-sec">
-              <h1>➕</h1>
-              <h2>{calcClick && <Add numberOne={numberOne} numberTwo={numberTwo} />}</h2>
+              <h1><span role="img" aria-label="plus">➕</span></h1>
+              <h2>{calcClick && <Add numberOne={finalNumOne} numberTwo={finalNumTwo} />}</h2>
             </div>
             <div className="col-3 calc-sec">
-              <h1>➖</h1>
-              <h2>{calcClick && <Sub numberOne={numberOne} numberTwo={numberTwo} />}</h2>
+              <h1><span role="img" aria-label="minus">➖</span></h1>
+              <h2>{calcClick && <Sub numberOne={finalNumOne} numberTwo={finalNumTwo} />}</h2>
             </div>
             <div className="col-3 add calc-sec">
-              <h1>✖</h1>
-              <h2>{calcClick && <Mult numberOne={numberOne} numberTwo={numberTwo} />}</h2>
+              <h1><span role="img" aria-label="multiply">✖</span></h1>
+              <h2>{calcClick && <Mult numberOne={finalNumOne} numberTwo={finalNumTwo} />}</h2>
             </div>
             <div className="col-3 calc-sec">
-              <h1>➗</h1>
-              <h2>{calcClick && <Div numberOne={numberOne} numberTwo={numberTwo} />}</h2>
+              <h1><span role="img" aria-label="divide">➗</span></h1>
+              <h2>{calcClick && <Div numberOne={finalNumOne} numberTwo={finalNumTwo} />}</h2>
             </div>
 
           </div>

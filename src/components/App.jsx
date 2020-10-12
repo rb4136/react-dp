@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import Nav from "./Nav";
 import Home from "./Home";
 import Calculator from "./Calculator";
+import Emojipedia from "./Emojipedia";
+import Weather from "./Weather";
 
 function App() {
 
@@ -16,7 +18,9 @@ function App() {
     <h1>React Dev Playground</h1>
     <Nav navSelect={nav} />
     {navClick === "Home" && <Home />}
-    {navClick === "Calculator" && <Calculator navSelect={nav} />}
+    {navClick === "Calculator" && <Calculator />}
+    {navClick === "Emojipedia" && <Emojipedia />}
+    {navClick === "Weather" && <Weather />}
   </div>
 )}
 

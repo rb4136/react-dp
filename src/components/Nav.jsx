@@ -11,8 +11,12 @@ function Nav(props) {
         <div className="col">
           <button className="navbar-items" onClick={() => props.navSelect("Calculator")}>Calculator</button>
         </div>
-        <div className="col navbar-items">Project 2</div>
-        <div className="col navbar-items">Project 3</div>
+        <div className="col">
+          <button className="navbar-items" onClick={() => props.navSelect("Emojipedia")}>Emojipedia</button>
+        </div>
+        <div className="col">
+          <button className="navbar-items" onClick={() => props.navSelect("Weather")}>Weather</button>
+        </div>
         <div className="col navbar-items">Project 4</div>
       </div>
     </div>

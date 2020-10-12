@@ -1,5 +1,4 @@
 /* Color Palatte: https://colorhunt.co/palette/134510 */
-
 body {
   font-family: 'Quicksand', sans-serif;
   text-align: center;
@@ -32,7 +31,6 @@ button:focus, button:active {
 }
 
 /* HOME TAB */
-
 .home {
   margin: 7% 0;
 }
@@ -47,7 +45,6 @@ button:focus, button:active {
 }
 
 /* CALCULATOR TAB */
-
 .calc-input {
   width: 25%;
   text-align: center;
@@ -65,5 +62,24 @@ button:focus, button:active {
 }
 
 .calc-sec {
-  padding: 20px 0;
+  padding: 20px 10px;
+  word-wrap: break-word;
+}
+
+/* EMOJIPEDIA TAB */
+.emojipedia {
+  margin: 7% 15%;
+}
+
+.slick-next:before, .slick-prev:before {
+  font-size: 20px;
+  line-height: 1;
+  opacity: .75;
+  color: #132238;
+}
+
+/* WEATHER TAB */
+
+.weather {
+  margin: 7% 15%;
 }
