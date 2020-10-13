@@ -1,40 +1,52 @@
 import React, {useState, useEffect} from "react";
+import WeatherForm from "./Weather-Form";
+import WeatherView from "./Weather-View";
+import ErrorBoundary from "./ErrorBoundary";
 
 function Weather() {
 
   const [items, setItems] = useState([]);
-  const [zipcode, setZipCode] = useState(18104);
+  const [cityName, setCityName] = useState("");
+  const [zipcode, setZipCode] = useState("");
+  const [finalZip, setFinalZip] = useState(18104);
+  const [clickSubmit, setClickSubmit] = useState(false);
 
-  const API_KEY = process.env.REACT_APP_WEATHER_API;
-  const API_URL = "https://api.openweathermap.org/data/2.5/forecast?zip=" + zipcode + ",US&appid=" + API_KEY;
+  function handleSubmit(event) {
+    event.preventDefault();
+    setFinalZip(zipcode);
+    setZipCode("");
+    getWeather();
+    setClickSubmit(true);
+  }
 
   useEffect(() => {
-    fetch(API_URL)
+    getWeather();
+  }, [finalZip])
+
+  function getWeather() {
+    fetch("https://api.openweathermap.org/data/2.5/forecast?zip=" + finalZip + ",US&appid=" + process.env.REACT_APP_WEATHER_API + "&units=imperial")
     .then(res => res.json())
-    .then(
-      (result) => {
-        setItems(result.list)
-        console.log(result.list);
-      }
-    )
-  }, [])
+    .then((result) => {
+      setItems(result.list);
+      setCityName(result.city.name);
+      console.log(result.list);
+    })
+  }
+
+  return (<div className="weather container-fluid">
+    <ErrorBoundary>
+    <WeatherForm
+      setZipCode={setZipCode}
+      handleSubmit={handleSubmit}
+      zipcode={zipcode}
+    />
+    </ErrorBoundary>
+
+    <ErrorBoundary>{clickSubmit && <WeatherView cityName={cityName} items={items}/>}</ErrorBoundary>
 
 
-      return (
-        <div className="weather">
-            {items
-              .filter((e, i) => i % 8 === 0)
-              .map(item => (
-                  <div className="col">
-                    <img src={"http://openweathermap.org/img/wn/" + item.weather[0].icon + "@2x.png"} alt="weather-icon" /><br />
-                    {item.dt_txt}<br />
-                    {item.weather[0].main}
-                  </div>
-                ))
-            }
-        </div>
-      );
-    };
+  </div>);
 
+};
 
 export default Weather;

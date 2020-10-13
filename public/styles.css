@@ -81,5 +81,14 @@ button:focus, button:active {
 /* WEATHER TAB */
 
 .weather {
-  margin: 7% 15%;
+  margin: 7% 0;
+}
+
+.weather-head {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #132238;
 }
