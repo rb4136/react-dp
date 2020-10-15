@@ -8,19 +8,18 @@ function Weather() {
   const [items, setItems] = useState([]);
   const [cityName, setCityName] = useState("");
   const [zipcode, setZipCode] = useState("");
-  const [finalZip, setFinalZip] = useState(18104);
+  const [finalZip, setFinalZip] = useState("");
   const [clickSubmit, setClickSubmit] = useState(false);
 
   function handleSubmit(event) {
     event.preventDefault();
     setFinalZip(zipcode);
     setZipCode("");
-    getWeather();
     setClickSubmit(true);
   }
 
   useEffect(() => {
-    getWeather();
+    if (finalZip != "") { getWeather(); }
   }, [finalZip])
 
   function getWeather() {
@@ -34,15 +33,15 @@ function Weather() {
   }
 
   return (<div className="weather container-fluid">
-    <ErrorBoundary>
+
     <WeatherForm
       setZipCode={setZipCode}
       handleSubmit={handleSubmit}
       zipcode={zipcode}
     />
-    </ErrorBoundary>
 
-    <ErrorBoundary>{clickSubmit && <WeatherView cityName={cityName} items={items}/>}</ErrorBoundary>
+
+{clickSubmit && <WeatherView cityName={cityName} items={items}/>}
 
 
   </div>);
