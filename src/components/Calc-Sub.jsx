@@ -9,7 +9,7 @@ function Sub(props) {
 
   return (
     <div>
-      <h1>{sub}</h1>
+      <h3>{sub}</h3>
     </div>
   )
 };

@@ -1,13 +1,19 @@
-/* Color Palatte: https://colorhunt.co/palette/134510 */
+/* Original Color Palatte: https://colorhunt.co/palette/134510 */
+/* Mauve Palatte: https://colorhunt.co/palette/206914 */
+
+/* React Color Scheme:
+React Color is: #64DBF9
+Shades from Adobe: Darkest: #17343B / Darker: #316C7A / Lightest: #5AC5E0 / Lighter: #4AA4BA */
+
 body {
   font-family: 'Quicksand', sans-serif;
   text-align: center;
-  background-color: #ebf0f6;
-  color: #132238;
+  background-color: #625261;
+  color: #a6a6a4;
 }
 
 h1 {
-  color: #364e68;
+  color: #89beb3;
   padding-bottom: 20px;
 }
 
@@ -21,13 +27,20 @@ button:focus, button:active {
 }
 
 .navbar-items {
-  color: #132238;
+  color: #89beb3;
   border: 0;
-  background-color: #ebf0f6;
+  background-color: #625261;
 }
 
 .app-container {
   margin: 7% 15%;
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 /* HOME TAB */
@@ -56,10 +69,7 @@ button:focus, button:active {
   margin: 20px 0;
 }
 
-.add {
-  background-color: #C8D7DE;
-  height: 250px;
-}
+
 
 .calc-sec {
   padding: 20px 10px;
@@ -75,7 +85,7 @@ button:focus, button:active {
   font-size: 20px;
   line-height: 1;
   opacity: .75;
-  color: #132238;
+  color: #89beb3;
 }
 
 /* WEATHER TAB */
@@ -90,5 +100,77 @@ button:focus, button:active {
 }
 
 .btn-outline-secondary:hover {
-  background-color: #132238;
+  background-color: #89beb3;
+}
+
+.btn-outline-secondary {
+  color: #e8e8e8;
+  border-color: #e8e8e8;
+}
+
+/* TO DO TAB */
+
+.note {
+  background: #e8e8e8;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #89beb3;
+  padding: 10px;
+  width: 240px;
+  margin: 16px;
+  float: left;
+}
+.note h1 {
+  font-size: 1.1em;
+  margin-bottom: 6px;
+}
+.note p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.note button {
+  position: relative;
+  float: right;
+  margin-right: 10px;
+  color: #30475e;
+  border: none;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  outline: none;
+}
+
+form.create-note {
+  position: relative;
+  width: 480px;
+  margin: 30px auto 20px auto;
+  background: #e8e8e8;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+form.create-note input,
+form.create-note textarea {
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  resize: none;
+  background: #e8e8e8;
+}
+form.create-note button {
+  position: absolute;
+  right: 18px;
+  bottom: -18px;
+  background: #30475e;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
 }

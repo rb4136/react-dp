@@ -43,19 +43,19 @@ function Calculator() {
         <div className="container-fluid">
           <div className="row">
             <div className="col-3 add calc-sec">
-              <h1><span role="img" aria-label="plus">➕</span></h1>
+              <h1><span role="img" aria-label="plus"><i class="fas fa-plus"></i></span></h1>
               <h2>{calcClick && <Add numberOne={finalNumOne} numberTwo={finalNumTwo} />}</h2>
             </div>
             <div className="col-3 calc-sec">
-              <h1><span role="img" aria-label="minus">➖</span></h1>
+              <h1><span role="img" aria-label="minus"><i class="fas fa-minus"></i></span></h1>
               <h2>{calcClick && <Sub numberOne={finalNumOne} numberTwo={finalNumTwo} />}</h2>
             </div>
             <div className="col-3 add calc-sec">
-              <h1><span role="img" aria-label="multiply">✖</span></h1>
+              <h1><span role="img" aria-label="multiply"><i class="fas fa-times"></i></span></h1>
               <h2>{calcClick && <Mult numberOne={finalNumOne} numberTwo={finalNumTwo} />}</h2>
             </div>
             <div className="col-3 calc-sec">
-              <h1><span role="img" aria-label="divide">➗</span></h1>
+              <h1><span role="img" aria-label="divide"><i class="fas fa-divide"></i></span></h1>
               <h2>{calcClick && <Div numberOne={finalNumOne} numberTwo={finalNumTwo} />}</h2>
             </div>
 

@@ -1,9 +1,11 @@
 import React, {useState} from "react";
 import Nav from "./Nav";
+import Footer from "./Footer";
 import Home from "./Home";
 import Calculator from "./Calculator";
 import Emojipedia from "./Emojipedia";
 import Weather from "./Weather";
+import Todo from "./Todo";
 
 function App() {
 
@@ -21,6 +23,8 @@ function App() {
     {navClick === "Calculator" && <Calculator />}
     {navClick === "Emojipedia" && <Emojipedia />}
     {navClick === "Weather" && <Weather />}
+    {navClick === "To Do List" && <Todo />}
+    <Footer />
   </div>
 )}
 

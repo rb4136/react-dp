@@ -10,7 +10,7 @@ function Add(props) {
 
   return (
     <div>
-      <h1>{sum}</h1>
+      <h3>{sum}</h3>
     </div>
   )
 };

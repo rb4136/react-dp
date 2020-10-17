@@ -22,7 +22,7 @@ function Emojipedia() {
 
   return (
     <div className="emojipedia">
-      <p>Cycle through the emojis to see them and learn what they mean!</p>
+      <p>Cycle through the emojis or click on one below to see them and learn what they mean!</p>
 
       <Slider {...settings}>
 

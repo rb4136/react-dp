@@ -17,7 +17,9 @@ function Nav(props) {
         <div className="col">
           <button className="navbar-items" onClick={() => props.navSelect("Weather")}>Weather</button>
         </div>
-        <div className="col navbar-items">Project 4</div>
+        <div className="col">
+          <button className="navbar-items" onClick={() => props.navSelect("To Do List")}>To Do</button>
+        </div>
       </div>
     </div>
   )

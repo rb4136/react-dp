@@ -10,6 +10,7 @@ function Weather() {
   const [zipcode, setZipCode] = useState("");
   const [finalZip, setFinalZip] = useState("");
   const [clickSubmit, setClickSubmit] = useState(false);
+  const [result, setResult] = useState([]);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -28,7 +29,8 @@ function Weather() {
     .then((result) => {
       setItems(result.list);
       setCityName(result.city.name);
-      console.log(result.list);
+      setResult(result);
+      console.log(result);
     })
   }
 
@@ -41,7 +43,7 @@ function Weather() {
     />
 
 
-{clickSubmit && <WeatherView cityName={cityName} items={items}/>}
+{clickSubmit && <WeatherView cityName={cityName} items={items} result={result}/>}
 
 
   </div>);

@@ -21,7 +21,7 @@ function CalcForm(props) {
       <br />
       <button
         type="submit"
-        className="btn btn-dark calc-btn"
+        className="btn btn-outline-secondary calc-btn"
         onClick={props.handleSubmit}>
         Submit
       </button>

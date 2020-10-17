@@ -9,7 +9,7 @@ function Mult(props) {
 
   return (
     <div>
-      <h1>{mult}</h1>
+      <h3>{mult}</h3>
     </div>
   )
 };
