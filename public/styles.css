@@ -119,10 +119,13 @@ button:focus, button:active {
   margin: 16px;
   float: left;
 }
+
 .note h1 {
   font-size: 1.1em;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
+  padding-bottom: 0;
 }
+
 .note p {
   font-size: 1.1em;
   margin-bottom: 10px;
@@ -133,13 +136,16 @@ button:focus, button:active {
 .note button {
   position: relative;
   float: right;
-  margin-right: 10px;
-  color: #30475e;
+  margin-right: 8px;
+  margin-bottom: -28px;
+  color: #e8e8e8;
+  background-color: #ADA3AD;
   border: none;
   width: 36px;
   height: 36px;
   cursor: pointer;
   outline: none;
+  border-radius: 50%;
 }
 
 form.create-note {
@@ -164,8 +170,8 @@ form.create-note button {
   position: absolute;
   right: 18px;
   bottom: -18px;
-  background: #30475e;
-  color: #fff;
+  background: #ADA3AD;
+  color: #e8e8e8;
   border: none;
   border-radius: 50%;
   width: 36px;

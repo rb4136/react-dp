@@ -24,7 +24,7 @@ function App() {
     {navClick === "Emojipedia" && <Emojipedia />}
     {navClick === "Weather" && <Weather />}
     {navClick === "To Do List" && <Todo />}
-    <Footer />
+    {navClick === "Home" && <Footer />}
   </div>
 )}
 

@@ -1,15 +1,41 @@
 import React, {useState} from "react";
-import Note from "./Todo-Note";
 import ToDoForm from "./Todo-Form";
+import ToDoNote from "./Todo-Note";
 
 function Todo() {
 
-  const [notes, setNotes] = useState([]);
+  const [allNotes, setNotes] = useState([]);
+
+
+  function addNote(newNote) {
+    setNotes(prevNotes => {
+      return [
+        ...prevNotes,
+        newNote
+      ];
+    });
+  };
+
+  function deleteNote(id) {
+    setNotes(prevNotes => {
+      return prevNotes.filter((noteItem, index) => {
+        return index !== id;
+      });
+    });
+  };
 
   return (
     <div>
-      <ToDoForm />
-
+      <ToDoForm addNote={addNote} />
+      {allNotes.map((eachNote, index) => {
+        return (<ToDoNote
+          key={index}
+          id={index}
+          title={eachNote.title}
+          content={eachNote.content}
+          deleteNote={deleteNote}
+        />
+      )})}
     </div>
   )
 }
