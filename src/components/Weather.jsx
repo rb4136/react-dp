@@ -1,10 +1,8 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import WeatherForm from "./Weather-Form";
 import WeatherView from "./Weather-View";
-import ErrorBoundary from "./ErrorBoundary";
 
 function Weather() {
-
   const [items, setItems] = useState([]);
   const [cityName, setCityName] = useState("");
   const [zipcode, setZipCode] = useState("");
@@ -20,34 +18,37 @@ function Weather() {
   }
 
   useEffect(() => {
-    if (finalZip != "") { getWeather(); }
-  }, [finalZip])
+    if (finalZip !== "") {
+      fetch(
+        "https://api.openweathermap.org/data/2.5/forecast?zip=" +
+          finalZip +
+          ",US&appid=" +
+          process.env.REACT_APP_WEATHER_API +
+          "&units=imperial"
+      )
+        .then((res) => res.json())
+        .then((result) => {
+          setItems(result.list);
+          setCityName(result.city.name);
+          setResult(result);
+          console.log(result);
+        });
+    }
+  }, [finalZip]);
 
-  function getWeather() {
-    fetch("https://api.openweathermap.org/data/2.5/forecast?zip=" + finalZip + ",US&appid=" + process.env.REACT_APP_WEATHER_API + "&units=imperial")
-    .then(res => res.json())
-    .then((result) => {
-      setItems(result.list);
-      setCityName(result.city.name);
-      setResult(result);
-      console.log(result);
-    })
-  }
+  return (
+    <div className="weather container-fluid">
+      <WeatherForm
+        setZipCode={setZipCode}
+        handleSubmit={handleSubmit}
+        zipcode={zipcode}
+      />
 
-  return (<div className="weather container-fluid">
-
-    <WeatherForm
-      setZipCode={setZipCode}
-      handleSubmit={handleSubmit}
-      zipcode={zipcode}
-    />
-
-
-{clickSubmit && <WeatherView cityName={cityName} items={items} result={result}/>}
-
-
-  </div>);
-
-};
+      {clickSubmit && (
+        <WeatherView cityName={cityName} items={items} result={result} />
+      )}
+    </div>
+  );
+}
 
 export default Weather;
