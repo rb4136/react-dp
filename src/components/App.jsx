@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import Home from "./Home";
@@ -8,7 +8,6 @@ import Weather from "./Weather";
 import Todo from "./Todo";
 
 function App() {
-
   const [navClick, changeNavClick] = useState("Home");
 
   function nav(clicked) {
@@ -16,16 +15,17 @@ function App() {
   }
 
   return (
-  <div className="app-container">
-    <h1>React Dev Playground</h1>
-    <Nav navSelect={nav} />
-    {navClick === "Home" && <Home />}
-    {navClick === "Calculator" && <Calculator />}
-    {navClick === "Emojipedia" && <Emojipedia />}
-    {navClick === "Weather" && <Weather />}
-    {navClick === "To Do List" && <Todo />}
-    {navClick === "Home" && <Footer />}
-  </div>
-)}
+    <div className="app-container">
+      <h1>React Dev Playground - Now Live!</h1>
+      <Nav navSelect={nav} />
+      {navClick === "Home" && <Home />}
+      {navClick === "Calculator" && <Calculator />}
+      {navClick === "Emojipedia" && <Emojipedia />}
+      {navClick === "Weather" && <Weather />}
+      {navClick === "To Do List" && <Todo />}
+      {navClick === "Home" && <Footer />}
+    </div>
+  );
+}
 
 export default App;
